@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.TextFlow?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <top>
@@ -29,24 +29,29 @@
                </font>
             </Label>
             <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label alignment="CENTER" prefHeight="88.0" prefWidth="358.0" text="TEAM-01" textFill="#2c2b90">
+               <font>
+                  <Font name="NSimSun" size="36.0" />
+               </font>
+            </Label>
          </children>
       </HBox>
    </top>
-   <bottom>
+   <center>
       <AnchorPane prefHeight="625.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="205.0" fitWidth="185.0" layoutX="97.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="205.0" fitWidth="185.0" layoutX="99.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/vk.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="107.0" layoutY="280.0" prefHeight="17.0" prefWidth="166.0" text="VIRAT KOHLI">
+            <Label alignment="CENTER" layoutX="108.0" layoutY="219.0" prefHeight="17.0" prefWidth="166.0" text="VIRAT KOHLI">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
             <Separator prefHeight="9.0" prefWidth="900.0" />
-            <Label alignment="CENTER" layoutX="123.0" layoutY="41.0" prefHeight="42.0" prefWidth="134.0" text="CURENT PLAYER" textFill="#2c2b90">
+            <Label alignment="CENTER" layoutX="124.0" layoutY="187.0" prefHeight="42.0" prefWidth="134.0" text="CURENT PLAYER" textFill="#2c2b90">
                <font>
                   <Font name="NSimSun" size="18.0" />
                </font>
@@ -63,34 +68,8 @@
                   <Font size="72.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="130.0" layoutY="558.0" prefHeight="42.0" prefWidth="134.0" text="TEAM-01" textFill="#2c2b90">
-               <font>
-                  <Font name="NSimSun" size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="159.0" layoutY="442.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="77.0" text="BID" />
-            <Button layoutX="159.0" layoutY="525.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="IGNORE" />
-            <Label alignment="CENTER" layoutX="483.0" layoutY="551.0" prefHeight="42.0" prefWidth="134.0" text="TEAM-03" textFill="#2c2b90">
-               <font>
-                  <Font name="NSimSun" size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="512.0" layoutY="435.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="77.0" text="BID" />
-            <Button layoutX="512.0" layoutY="518.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="IGNORE" />
-            <Label alignment="CENTER" layoutX="638.0" layoutY="544.0" prefHeight="42.0" prefWidth="134.0" text="TEAM-04" textFill="#2c2b90">
-               <font>
-                  <Font name="NSimSun" size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="667.0" layoutY="428.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="77.0" text="BID" />
-            <Button layoutX="667.0" layoutY="511.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="IGNORE" />
-            <Label alignment="CENTER" layoutX="304.0" layoutY="555.0" prefHeight="42.0" prefWidth="134.0" text="TEAM-02" textFill="#2c2b90">
-               <font>
-                  <Font name="NSimSun" size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="333.0" layoutY="439.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="77.0" text="BID" />
-            <Button layoutX="333.0" layoutY="522.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="IGNORE" />
+            <Button layoutX="347.0" layoutY="407.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="77.0" text="BID" />
+            <Button layoutX="347.0" layoutY="491.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="IGNORE" />
             <ImageView fitHeight="84.0" fitWidth="64.0" layoutX="510.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/vk.png" />
@@ -101,7 +80,14 @@
                   <Font name="NSimSun" size="14.0" />
                </font>
             </Label>
+            <TextFlow layoutX="468.0" layoutY="407.0" prefHeight="200.0" prefWidth="404.0" />
+            <TableView layoutX="91.0" layoutY="257.0" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
-   </bottom>
+   </center>
 </BorderPane>
