@@ -91,7 +91,7 @@
             </Label>
             <Button layoutX="333.0" layoutY="439.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="77.0" text="BID" />
             <Button layoutX="333.0" layoutY="522.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="IGNORE" />
-            <ImageView fitHeight="84.0" fitWidth="64.0" layoutX="518.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="84.0" fitWidth="64.0" layoutX="510.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/vk.png" />
                </image>
