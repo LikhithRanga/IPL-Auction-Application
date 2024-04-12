@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 900, 700);
         stage.setTitle("Hello!");
         stage.setScene(scene);
-        //i am keka
+        //Keka Banda
         stage.show();
     }
 
