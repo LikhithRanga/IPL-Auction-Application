@@ -54,8 +54,6 @@ public class PlayerRegisterationController implements Initializable {
         alert.setTitle("Registration Successful");
         alert.setHeaderText(null);
         alert.setContentText("Registration is successful!");
-
-        // Create a button for returning to home view
         ButtonType homeButton = new ButtonType("Go To Home");
         alert.getButtonTypes().setAll(homeButton);
 

@@ -43,12 +43,9 @@ public class TeamRegisterationController {
         alert.setTitle("Registration Successful");
         alert.setHeaderText(null);
         alert.setContentText("Registration is successful!");
-
-        // Create a button for returning to home view
         ButtonType homeButton = new ButtonType("Go To Home");
         alert.getButtonTypes().setAll(homeButton);
 
-        // Handle button action
         Stage currentStage = (Stage) alert.getDialogPane().getScene().getWindow();
         Button homeBtn = (Button) alert.getDialogPane().lookupButton(homeButton);
         homeBtn.setOnAction(e -> {
