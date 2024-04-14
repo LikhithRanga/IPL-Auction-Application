@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -11,8 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.iplauctionapplication.PlayerRegisterationController">
    <top>
       <HBox prefHeight="46.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
@@ -29,25 +29,26 @@
          </children>
       </HBox>
    </top>
-   <center>
+   <right>
       <AnchorPane prefHeight="506.0" prefWidth="557.0" BorderPane.alignment="CENTER">
          <children>
             <Separator layoutY="-13.0" prefHeight="27.0" prefWidth="500.0" />
             <Label alignment="CENTER_RIGHT" layoutX="73.0" layoutY="52.0" prefHeight="25.0" prefWidth="117.0" text="Player Name :" />
-            <TextField layoutX="190.0" layoutY="52.0" />
+            <TextField fx:id="playerName" layoutX="196.0" layoutY="52.0" prefHeight="26.0" prefWidth="254.0" />
             <Label layoutY="1.0" prefHeight="36.0" prefWidth="215.0" text="Enter the Player Details:-">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="73.0" layoutY="83.0" prefHeight="25.0" prefWidth="117.0" text=" Player Age :" />
-            <TextField layoutX="190.0" layoutY="83.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="73.0" layoutY="117.0" prefHeight="25.0" prefWidth="117.0" text="Player Role :" />
-            <TextField layoutX="190.0" layoutY="117.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="73.0" layoutY="148.0" prefHeight="25.0" prefWidth="117.0" text="Player Role :" />
-            <TextField layoutX="190.0" layoutY="148.0" />
-            <Button layoutX="207.0" layoutY="238.0" mnemonicParsing="false" text="SUBMIT" />
+            <Label alignment="CENTER_RIGHT" layoutX="63.0" layoutY="96.0" prefHeight="25.0" prefWidth="117.0" text=" Player Age :" />
+            <TextField fx:id="playerAge" layoutX="196.0" layoutY="95.0" prefHeight="26.0" prefWidth="253.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="63.0" layoutY="143.0" prefHeight="25.0" prefWidth="117.0" text="Player Role :" />
+            <Label alignment="CENTER_RIGHT" layoutX="63.0" layoutY="184.0" prefHeight="25.0" prefWidth="117.0" text="Set Base Price:" />
+            <ChoiceBox fx:id="basePrice" layoutX="195.0" layoutY="184.0" prefHeight="26.0" prefWidth="253.0" />
+            <Button layoutX="205.0" layoutY="245.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+            <ChoiceBox fx:id="playerRole" layoutX="195.0" layoutY="143.0" prefHeight="26.0" prefWidth="253.0" />
+            <Button layoutX="350.0" layoutY="320.0" mnemonicParsing="false" onAction="#backToHome" text="Back To Home" />
          </children>
       </AnchorPane>
-   </center>
+   </right>
 </BorderPane>
