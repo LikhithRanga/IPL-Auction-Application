@@ -11,20 +11,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <Separator layoutX="2.0" layoutY="-1.0" prefHeight="2.0" prefWidth="600.0" />
-            <Button layoutX="220.0" layoutY="28.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="142.0" text="Admin login" />
-            <Button layoutX="220.0" layoutY="118.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="142.0" text="TEAM Registeration" />
-            <Button layoutX="220.0" layoutY="216.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="142.0" text="PLAYER Registeration" />
+            <Separator layoutX="2.0" layoutY="-1.0" prefHeight="2.0" prefWidth="600.0" style="-fx-background-color: red;" />
+            <Button layoutX="220.0" layoutY="28.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="142.0" style="-fx-text-fill: white; -fx-background-color: #0b2a9a;" text="Admin login" />
+            <Button layoutX="220.0" layoutY="118.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="142.0" style="-fx-background-color: #0b2a9a; -fx-text-fill: white;" text="TEAM Registeration" />
+            <Button layoutX="220.0" layoutY="216.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="142.0" style="-fx-background-color: #0b2a9a; -fx-text-fill: white;" text="PLAYER Registeration" />
          </children>
       </AnchorPane>
    </center>
    <top>
-      <HBox prefHeight="71.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="115.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,7 +31,7 @@
                </image>
             </ImageView>
             <Pane prefHeight="71.0" prefWidth="96.0" />
-            <Label alignment="CENTER" prefHeight="71.0" prefWidth="137.0" text="VIEW" textFill="#2649d3">
+            <Label alignment="CENTER" prefHeight="71.0" prefWidth="137.0" text="VIEW" textFill="#0b2a9a">
                <font>
                   <Font name="Calibri Bold" size="36.0" />
                </font>
