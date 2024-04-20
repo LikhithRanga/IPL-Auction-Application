@@ -2,33 +2,23 @@ package org.example.iplauctionapplication;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-
 public class PlayerRegisterationController implements Initializable {
 
     private Stage stage;
-    private Scene scene;
-    private Parent root;
-
-    public void backToHome(ActionEvent event) throws IOException
-    {
-        root = FXMLLoader.load(getClass().getResource("HomeView.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+    private PlayerModel playerModel; // Inject PlayerModel
+    private String[] Roles = {"Batsman", "All-Rounder", "WicketKeeper", "Bowler"};
+    private Long[] price = {2000000L, 5000000L, 10000000L, 20000000L};
 
     @FXML
     private TextField playerName;
@@ -38,17 +28,28 @@ public class PlayerRegisterationController implements Initializable {
     private ChoiceBox<String> playerRole;
     @FXML
     private ChoiceBox<Long> basePrice;
-    private String[] Roles = {"Batsman", "All-Rounder", "WicketKeeper", "Bowler"};
-    private Long[] price = {2000000L, 5000000L, 10000000L, 20000000L};
-    String pN;
-    int pA;
-    String pR;
-    long bP;
+
+    public PlayerRegisterationController(PlayerModel playerModel) {
+        this.playerModel = playerModel;
+    }
+    public void backToHome(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("HomeView.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void submit(ActionEvent event) throws IOException{
-           pN = playerName.getText();
-           pA = Integer.parseInt(playerAge.getText());
-           pR = playerRole.getValue();
-           bP= basePrice.getValue();
+        String pN = playerName.getText();
+        int pA = Integer.parseInt(playerAge.getText());
+        String pR = playerRole.getValue();
+        long bP= basePrice.getValue();
+
+        // Call registerPlayer method of PlayerModel to insert into the database
+        playerModel.registerPlayer(pN, pA, pR, bP);
+
         // Create an alert
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration Successful");
@@ -80,7 +81,6 @@ public class PlayerRegisterationController implements Initializable {
         alert.showAndWait();
 
     }
-    //playerModel newPlayer = new playerModel(pN, pA, pR, bP);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
