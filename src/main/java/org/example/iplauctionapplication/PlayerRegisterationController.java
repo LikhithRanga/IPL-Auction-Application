@@ -49,6 +49,7 @@ public class PlayerRegisterationController implements Initializable {
            pA = Integer.parseInt(playerAge.getText());
            pR = playerRole.getValue();
            bP= basePrice.getValue();
+           playerModel newPlayer = new playerModel(pN, pA, pR, bP);
         // Create an alert
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration Successful");
@@ -80,7 +81,6 @@ public class PlayerRegisterationController implements Initializable {
         alert.showAndWait();
 
     }
-    //playerModel newPlayer = new playerModel(pN, pA, pR, bP);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

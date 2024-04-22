@@ -13,14 +13,15 @@ public class playerModel {
 
     public playerModel(String playerName, int playerAge, String playerRole, long basePrice)
     {
+        System.out.println("Entered Constructor");
         this.playerName = playerName;
         this.playerAge = playerAge;
         this.playerRole = playerRole;
         this.basePrice = basePrice;
     }
-    public  void registerPlayer(String playerName,int playerAge, String playerRole, long basePrice){
-        try(Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3606/IPLAuction","root","1234")){
-            String sqlquery="INSERT INTO players(playerName,playerAge,playerRole,basePrice,teamName) VALUES(playerName,playerAge,playerRole,basePrice,NULL)";
+    public  void registerPlayer(){
+        try(Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3606/IPLAuction","root","Kesh123@Keka")) {
+            String sqlquery = "INSERT INTO players(playerName,playerAge,playerRole,basePrice,teamName) VALUES(playerName,playerAge,playerRole,basePrice,NULL)";
             try (PreparedStatement statement = connection.prepareStatement(sqlquery)) {
                 statement.setString(1, playerName);
                 statement.setInt(2, playerAge);
@@ -28,8 +29,9 @@ public class playerModel {
                 statement.setLong(3, basePrice);
                 statement.executeUpdate();
             }
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
