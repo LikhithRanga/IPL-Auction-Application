@@ -45,9 +45,11 @@
             <Label alignment="CENTER_RIGHT" layoutX="63.0" layoutY="143.0" prefHeight="25.0" prefWidth="117.0" text="Player Role :" />
             <Label alignment="CENTER_RIGHT" layoutX="63.0" layoutY="184.0" prefHeight="25.0" prefWidth="117.0" text="Set Base Price:" />
             <ChoiceBox fx:id="basePrice" layoutX="195.0" layoutY="184.0" prefHeight="26.0" prefWidth="253.0" />
-            <Button fx:id="submit" layoutX="239.0" layoutY="307.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+            <Button fx:id="submit" layoutX="237.0" layoutY="366.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
             <ChoiceBox fx:id="playerRole" layoutX="195.0" layoutY="143.0" prefHeight="26.0" prefWidth="253.0" />
-            <Button layoutX="339.0" layoutY="393.0" mnemonicParsing="false" onAction="#backToHome" text="Back To Home" />
+            <Button layoutX="338.0" layoutY="430.0" mnemonicParsing="false" onAction="#backToHome" text="Back To Home" />
+            <TextField fx:id="playerImage" layoutX="196.0" layoutY="233.0" prefHeight="26.0" prefWidth="255.0" />
+            <Label layoutX="108.0" layoutY="238.0" text="Player Image:" />
          </children>
       </AnchorPane>
    </right>

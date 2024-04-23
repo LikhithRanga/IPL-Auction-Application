@@ -38,6 +38,7 @@ public class TeamRegisterationController {
     {
         tN = teamName.getText();
         tO = teamOwner.getText();
+        teamModel team = new teamModel(tN,tO);
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration Successful");

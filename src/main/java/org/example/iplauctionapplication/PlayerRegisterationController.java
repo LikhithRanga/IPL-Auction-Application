@@ -38,18 +38,22 @@ public class PlayerRegisterationController implements Initializable {
     private ChoiceBox<String> playerRole;
     @FXML
     private ChoiceBox<Long> basePrice;
+    @FXML
+    private TextField playerImage;
     private String[] Roles = {"Batsman", "All-Rounder", "WicketKeeper", "Bowler"};
     private Long[] price = {2000000L, 5000000L, 10000000L, 20000000L};
     String pN;
     int pA;
     String pR;
     long bP;
+    String pI;
     public void submit(ActionEvent event) throws IOException{
            pN = playerName.getText();
            pA = Integer.parseInt(playerAge.getText());
            pR = playerRole.getValue();
-           bP= basePrice.getValue();
-           playerModel newPlayer = new playerModel(pN, pA, pR, bP);
+           bP = basePrice.getValue();
+           pI = playerImage.getText();
+           playerModel newPlayer = new playerModel(pN, pA, pR, bP, pI);
         // Create an alert
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Registration Successful");
