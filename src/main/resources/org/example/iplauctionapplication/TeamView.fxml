@@ -16,20 +16,15 @@
    <top>
       <HBox prefHeight="64.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
          <children>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
             <ImageView fitHeight="75.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../images/Indian-Premier-League-Logo.png" />
                </image>
             </ImageView>
-            <Label contentDisplay="CENTER" prefHeight="75.0" prefWidth="156.0" text="AUCTION" textFill="#2c2b90">
+            <Label contentDisplay="CENTER" prefHeight="75.0" prefWidth="156.0" text="AUCTION" textAlignment="CENTER" textFill="#2c2b90">
                <font>
                   <Font name="Arial Black" size="29.0" />
-               </font>
-            </Label>
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <Label alignment="CENTER" prefHeight="88.0" prefWidth="358.0" text="TEAM-01" textFill="#2c2b90">
-               <font>
-                  <Font name="NSimSun" size="36.0" />
                </font>
             </Label>
          </children>
