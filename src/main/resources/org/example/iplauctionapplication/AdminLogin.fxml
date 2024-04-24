@@ -35,7 +35,7 @@
             <TextField fx:id="username" layoutX="227.0" layoutY="66.0" />
             <Label alignment="CENTER_RIGHT" layoutX="96.0" layoutY="105.0" prefHeight="37.0" prefWidth="131.0" text="PASSWORD:" />
             <PasswordField fx:id="password" layoutX="227.0" layoutY="111.0" />
-            <Button layoutX="209.0" layoutY="175.0" mnemonicParsing="false" onAction="#submit" text="Sign IN" />
+            <Button layoutX="209.0" layoutY="175.0" mnemonicParsing="false" onAction="#submit" text="Start Auction" />
             <Button layoutX="289.0" layoutY="246.0" mnemonicParsing="false" onAction="#backToHome" text="Back To Home" />
          </children>
       </AnchorPane>

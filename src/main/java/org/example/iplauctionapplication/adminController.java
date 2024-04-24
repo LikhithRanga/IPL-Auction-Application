@@ -45,8 +45,6 @@ public class adminController {
     public void submit(ActionEvent event)throws IOException {
         uname = username.getText();
         pword = password.getText();
-        System.out.println(uname);
-        System.out.println(pword);
         if(Objects.equals(uname, "admin") && Objects.equals(pword, "admin")) {
             nextScreen(event);
         }
