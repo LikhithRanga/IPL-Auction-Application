@@ -45,19 +45,24 @@ public class DatabaseConnection {
         }
     }
 
-    private static List<String> executeQuery(String query) {
-        List<String> resultList = new ArrayList<>();
+    public static List<teamModel> getAllTeams()
+    {
+        List<teamModel> teams = new ArrayList<>();
+        String query = "SELECT * FROM teams";
         try (Connection connection = getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
             while (resultSet.next()) {
-                String teamName = resultSet.getString("teamName");
-                resultList.add(teamName);
+                teamModel team = new teamModel();
+                team.setTeamName(resultSet.getString("teamName"));
+                team.setOwner(resultSet.getString("owner"));
+                team.setPurse(resultSet.getLong("purse"));
+                teams.add(team);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return resultList;
+        return teams;
     }
 
     public static void registerPlayer(String playerName, int playerAge, String playerRole, long basePrice, String playerImage) {
@@ -70,8 +75,58 @@ public class DatabaseConnection {
         executeUpdate(query, teamName, owner, BigDecimal.valueOf(purse));
     }
 
-    public static List<String> getTeamsAndPurse() {
-        String query = "SELECT teamName FROM teams";
-        return executeQuery(query);
+    public static List<playerModel> getAllPlayers()
+    {
+        List<playerModel> players = new ArrayList<>();
+        String query = "SELECT * FROM players WHERE teamName IS NULL";
+        try (Connection connection = getConnection();
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(query)) {
+            while (resultSet.next()) {
+                playerModel player = new playerModel();
+                player.setPlayerName(resultSet.getString("playerName"));
+                player.setPlayerAge(resultSet.getInt("playerAge"));
+                player.setPlayerImage(resultSet.getString("playerImage"));
+                player.setBasePrice(resultSet.getLong("basePrice"));
+                player.setPlayerRole(resultSet.getString("playerRole"));
+                players.add(player);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return players;
+    }
+
+    public static void updatePlayer(playerModel player)
+    {
+        String name = player.getPlayerName();
+        long price = player.getBasePrice();
+        String team = player.getTeamName();
+        String query = "Update players set basePrice = " + price + ", teamName = '" + team + "' where playerName = '" + name + "'";
+        try{
+            Connection connection = getConnection();
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void updateTeam(teamModel team)
+    {
+        String name = team.getTeamName();
+        long price = team.getPurse();
+        String query = "Update teams set purse = " + price + " where teamName = '" + name + "'";
+        try{
+            Connection connection = getConnection();
+            Statement statement = connection.createStatement();
+            int rowsAffected = statement.executeUpdate(query);
+            System.out.println("Rows affected: " + rowsAffected);
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
