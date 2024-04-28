@@ -129,4 +129,26 @@ public class DatabaseConnection {
             e.printStackTrace();
         }
     }
+    public static List<playerModel> getTeamPlayers(String teamName) {
+        List<playerModel> players = new ArrayList<>();
+        String query = "SELECT * FROM players WHERE teamName = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, teamName);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    playerModel player = new playerModel();
+                    player.setPlayerName(resultSet.getString("playerName"));
+                    player.setPlayerAge(resultSet.getInt("playerAge"));
+                    player.setPlayerImage(resultSet.getString("playerImage"));
+                    player.setBasePrice(resultSet.getLong("basePrice"));
+                    player.setPlayerRole(resultSet.getString("playerRole"));
+                    players.add(player);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return players;
+    }
 }
