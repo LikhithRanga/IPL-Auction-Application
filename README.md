@@ -1,4 +1,4 @@
-# Auction System Application
+# IPL Auction System Application
 
 This JavaFX application, developed with the support of Scene Builder, is an Auction System that allows players and teams to register and take part in an auction.
 
